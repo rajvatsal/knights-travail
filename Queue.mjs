@@ -3,8 +3,8 @@ export default function Queue(initNode) {
 		throw new Error("No init node provided to queue");
 		return;
 	}
-	const queue = [initNode];
-	const enqueued = [];
+	let queue = [initNode];
+	let enqueued = [];
 
 	const enqueue = (...nodes) =>
 		nodes.forEach((node) => {
