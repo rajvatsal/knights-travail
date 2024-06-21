@@ -4,14 +4,10 @@ export default function Queue(initNode) {
 		return;
 	}
 	let queue = [initNode];
-	let enqueued = [];
 
 	const enqueue = (...nodes) =>
 		nodes.forEach((node) => {
-			if (node === null) return;
-			if (enqueued.find(([x, y]) => x === node[0] && y === node[1])) return;
-			enqueued.push(node);
-			queue.push(node);
+			node === null ? null : queue.push(node);
 		});
 	const dequeue = () => (queue = queue.slice(1));
 	const getLength = () => queue.length;
